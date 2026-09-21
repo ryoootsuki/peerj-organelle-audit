@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+cd "$ROOT"
+export PYTHONPATH="$ROOT/workflow${PYTHONPATH:+:$PYTHONPATH}"
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1
+export VECLIB_MAXIMUM_THREADS=1 MALLOC_ARENA_MAX=4 LC_ALL=C
+ulimit -n 65536 2>/dev/null || true
+exec python workflow/cli.py "$@"

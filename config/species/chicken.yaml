@@ -1,0 +1,35 @@
+species:
+  id: chicken
+  scientific_name: Gallus gallus
+  mode: animal_two_reference
+  exact_manifest: manifests/chicken_PRJNA573756_exact_141_runs.tsv
+  manifest_format: tsv
+  metadata_retrieval_date: prior completed PRJNA573756 analysis
+  bioproject: PRJNA573756
+  expected_total_runs: 141
+  expected_evaluable_runs: 141
+  manifest_sha256: 3870ce653e7855f522bac5a92c953e2d61d773726d6addc054f8b23dc9915243
+references:
+  nuclear_assembly_accession: GCF_016699485.2
+  organelles:
+    mitochondrial: NC_053523.1
+  explicit_organelle_accessions_to_remove:
+  - NC_053523.1
+  primary_nuclear_reference: masked_main
+  sensitivity_nuclear_references:
+  - contig_filtered
+  - masked_strict
+downstream_groups:
+- high_organelle_compatible
+- high_multi
+- low_control
+local_inputs:
+  read_roots:
+  - /path/to/chicken_fastq
+  references:
+    nuclear_fasta: /path/to/GCF_016699485.2_genomic.fna
+    organelles:
+      mitochondrial:
+        extract_accession_from_nuclear: NC_053523.1
+metadata_curation:
+  protocol_table: metadata/bioproject_protocol_metadata_curated.tsv

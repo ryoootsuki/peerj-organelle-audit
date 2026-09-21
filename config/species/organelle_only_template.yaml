@@ -1,0 +1,19 @@
+# Optional template for non-model taxa lacking a nuclear assembly.
+# This mode computes inclusive organelle-compatible counts/fractions only.
+# It cannot compute strict or nuclear-organelle ambiguity metrics and cannot run downstream nuclear variant filtering.
+species:
+  id: replace_me
+  scientific_name: "Replace me"
+  mode: organelle_only
+  exact_manifest: "manifests/replace_with_pinned_manifest.tsv"
+  manifest_format: tsv
+  metadata_retrieval_date: "YYYY-MM-DD"
+  expected_total_runs: 0
+  expected_evaluable_runs: 0
+
+references:
+  nuclear_assembly_accession: null
+  organelles:
+    mitochondrial: "REPLACE_ACCESSION"
+    # chloroplast: "REPLACE_ACCESSION"  # add when relevant and available
+  explicit_organelle_accessions_to_remove: []

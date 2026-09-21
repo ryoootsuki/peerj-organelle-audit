@@ -1,0 +1,15 @@
+item	value
+platform	Linux-6.8.0-124-generic-x86_64-with-glibc2.39
+physical_cores	64
+logical_cpus_available	128
+memory_gb	1007.7
+audit_workers	8
+audit_threads_per_run	10
+prefetch_slots	4
+fasterq_slots	4
+fasterq_threads	6
+downstream_workers	4
+downstream_threads_per_run	16
+downstream_sort_threads	6
+reference_threads	48
+runtime_config	config/runtime.auto.yaml

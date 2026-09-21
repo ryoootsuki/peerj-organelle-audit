@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite the associated article and this software release when reusing the workflow."
+title: "Compartment-aware organelle compatibility audit workflow for public sequencing archives"
+version: 1.0.0
+authors:
+  - family-names: Ootsuki
+    given-names: Ryo
+license: MIT
+keywords:
+  - RAD-seq
+  - organelle bycatch
+  - NUMT
+  - NUPT
+  - reproducibility
+  - Silene latifolia
+  - Gallus gallus

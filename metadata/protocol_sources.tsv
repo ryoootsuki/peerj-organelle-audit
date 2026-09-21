@@ -1,0 +1,7 @@
+BioProject	first_author	year	journal	doi	use_in_repository
+PRJDB16402	Akagi et al.	2025	Science	10.1126/science.adk9074	protocol context; some wet-lab details remain unavailable
+PRJEB34584	Baena-Díaz et al.	2019	Molecular Ecology	10.1111/mec.15271	ddRAD study; some wet-lab details remain unavailable
+PRJNA285775	Qiu et al.	2016	Molecular Ecology	10.1111/mec.13297	publication-based correction to SbfI RAD-seq
+PRJNA669447	Gramlich et al.	2022	New Phytologist	10.1111/nph.18260	ddRAD protocol metadata
+PRJNA907022	Delph et al.	2022	Evolution Letters	10.1002/evl3.283	MSG RAD protocol; paper/archive layout discrepancy retained
+PRJNA573756	Luzuriaga-Neira et al.	2019	Frontiers in Genetics	10.3389/fgene.2019.01172	animal RAD validation protocol

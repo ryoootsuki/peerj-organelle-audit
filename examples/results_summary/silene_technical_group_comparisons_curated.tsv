@@ -1,0 +1,2 @@
+comparison	group_column	group_1	group_2	metric	n_1	n_2	median_1	median_2	median_difference_1_minus_2	bootstrap_95ci_low	bootstrap_95ci_high	mann_whitney_u	p_value_unadjusted	cliffs_delta	interpretation_note	p_value_bh
+paired_vs_single	LibraryLayout	PAIRED	SINGLE	frac_strict_total	275	2404	0.2109938747510003	0.0220599827916095	0.1889338919593907	0.1816210532494601	0.1954902366075816	576097.0	8.324881533983483e-91	0.7428437452730299	Descriptive association only; project, protocol, tissue, depth, and platform are potential confounders.	2.497464460195045e-90

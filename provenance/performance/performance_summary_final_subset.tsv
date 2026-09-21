@@ -1,0 +1,5 @@
+species	analysis_stage	n_completed	median_run_wall_seconds	p95_run_wall_seconds	maximum_run_wall_seconds	sum_run_wall_hours	note
+silene	archive_audit	2679	285.029	1701.0953999999986	66306.051	632.5086422222222	all completed archive-audit runs from supplied results bundle
+silene	downstream_final_subset	26	767.469	2333.8327499999996	18278.361	11.477859999999998	filtered to final downstream_unique_runs.tsv (26 unique runs); excludes stale/pilot downstream timings
+chicken	archive_audit	141	27.252	34.863	37.75	1.0155763888888891	all completed archive-audit runs from supplied results bundle
+chicken	downstream_final_subset	9	161.016	163.88660000000002	164.109	0.39626333333333336	filtered to final downstream_unique_runs.tsv (9 unique runs); excludes stale/pilot downstream timings

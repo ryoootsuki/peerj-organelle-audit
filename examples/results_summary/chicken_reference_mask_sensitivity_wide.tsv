@@ -1,0 +1,10 @@
+Run	selection_group	nuclear_qnames_primary__nuclear_contig_filtered	nuclear_qnames_primary__nuclear_masked_main	nuclear_qnames_primary__nuclear_masked_strict	multi_qnames_primary__nuclear_contig_filtered	multi_qnames_primary__nuclear_masked_main	multi_qnames_primary__nuclear_masked_strict	strict_organelle_qnames_primary__nuclear_contig_filtered	strict_organelle_qnames_primary__nuclear_masked_main	strict_organelle_qnames_primary__nuclear_masked_strict
+SRR10168185	high_multi|high_organelle_compatible	80610	80610	80610	2	2	2	0	0	0
+SRR10168191	high_multi|high_organelle_compatible	81595	81595	81595	6	6	6	0	0	0
+SRR10168199	high_multi	66261	66261	66261	2	2	2	0	0	0
+SRR10168207	high_organelle_compatible	67706	67706	67706	1	1	1	1	1	1
+SRR10168216	low_control	68576	68576	68576	0	0	0	0	0	0
+SRR10168223	high_multi|high_organelle_compatible	68391	68391	68391	2	2	2	0	0	0
+SRR10168249	low_control	78086	78086	78086	0	0	0	0	0	0
+SRR10168260	low_control	67748	67748	67748	0	0	0	0	0	0
+SRR10239510	low_control	81671	81671	81671	0	0	0	0	0	0

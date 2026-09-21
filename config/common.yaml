@@ -1,0 +1,114 @@
+workflow:
+  version: 1.0.0
+  resource_profile: config/profiles/epyc7713_example_512gb.yaml
+  runtime_config: config/runtime.auto.yaml
+  missing_read_policy: skip_with_report
+  primary_mapq: 20
+  mapq_thresholds:
+  - 0
+  - 10
+  - 20
+  - 30
+  - 40
+  - 50
+  pilot_runs_per_species: 12
+  cleanup_raw_sra_after_run: true
+  cleanup_raw_fastq_after_run: true
+  cleanup_trimmed_after_audit: true
+  retain_primary_mapq_sets: true
+  audit_streaming_qnames: true
+  random_seed: 20260714
+  validate_local_inputs_before_run: true
+  scheduler: dynamic_lpt_queue
+  network_free_default: true
+network:
+  retries: 4
+  retry_sleep_seconds: 20
+  allow_read_download: false
+  allow_reference_download: false
+  allow_protocol_metadata_enrichment: false
+preprocess:
+  qualified_quality_phred: 20
+  length_required: 30
+  trim_poly_g: true
+  cut_right: true
+  detect_adapter_for_pe: true
+  unqualified_percent_limit: 40
+  n_base_limit: 5
+  cut_right_window_size: 4
+  cut_right_mean_quality: 20
+  compression_level: 1
+reference_preparation:
+  whole_contig_min_coverage: 0.8
+  whole_contig_min_identity: 0.95
+  main_mask_min_alignment_length: 200
+  main_mask_min_identity: 0.9
+  strict_mask_min_alignment_length: 500
+  strict_mask_min_identity: 0.95
+  minimap2_preset: asm20
+  minimap2_max_secondary: 10000
+  minimap2_secondary_score_ratio: 0.2
+triage:
+  low_fraction: 0.05
+  high_fraction: 0.2
+  ambiguity_fraction: 0.01
+statistics:
+  bootstrap_replicates: 2000
+  alpha: 0.05
+subset:
+  silene_runs_per_group: 6
+  chicken_runs_per_group: 4
+  minimum_runs_per_group: 2
+variant_calling:
+  minimum_mapping_quality: 20
+  minimum_base_quality: 20
+  minimum_variant_quality: 30
+  minimum_depth: 3
+  maximum_depth: 100000
+  include_indels: true
+  ploidy: 2
+local_inputs:
+  read_source_policy: local_required
+  reference_source_policy: local_required
+  recursive_scan: true
+  follow_symlinks: false
+  validate_fastq_first_record: true
+  deep_gzip_test: false
+  ambiguity_policy: deterministic_warn
+  exclude_name_tokens:
+  - _trim
+  - .trim
+  - _paired
+  - .paired
+  - singletons
+  - singleton
+  - _unpaired
+  - .unpaired
+  - _cleaned
+  - .cleaned
+  - .failed
+  - fastp
+  accepted_extensions:
+  - .fastq.gz
+  - .fq.gz
+  - .fastq
+  - .fq
+  read_hash_mode: none
+  reference_hash_mode: sha256
+  index_manifest_scope: evaluable
+resources:
+  scheduler_poll_seconds: 0.2
+  worker_failure_policy: continue_and_report
+triage_sensitivity:
+  low_fraction_grid:
+  - 0.025
+  - 0.05
+  - 0.1
+  high_fraction_grid:
+  - 0.15
+  - 0.2
+  - 0.25
+  ambiguity_fraction_grid:
+  - 0.005
+  - 0.01
+  - 0.02

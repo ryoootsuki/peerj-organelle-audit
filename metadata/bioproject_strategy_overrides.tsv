@@ -1,0 +1,2 @@
+BioProject	ArchiveLibraryStrategy	CuratedLibraryStrategy	curation_basis	curation_note
+PRJNA285775	WGS	RAD-Seq	Qiu et al. (2016), Molecular Ecology, DOI 10.1111/mec.13297; SbfI RAD mapping study	Archive-derived WGS label is preserved in the raw manifest but is not used as a biological WGS category in curated analyses.

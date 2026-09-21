@@ -1,0 +1,43 @@
+species:
+  id: silene
+  scientific_name: Silene latifolia
+  mode: plant_three_reference
+  exact_manifest: manifests/silene_SraRunInfo_retrieved_2025-12-25.csv
+  manifest_format: sra_runinfo_csv
+  metadata_retrieval_date: '2025-12-25'
+  expected_total_runs: 2686
+  expected_evaluable_runs: 2679
+  expected_library_strategy_counts:
+    RAD-Seq: 2686
+  manifest_sha256: 572153c3a63f13fca1ebed00100108d141bf82191899ba9db27d5bab575fa946
+references:
+  nuclear_assembly_accession: GCF_048544455.1
+  organelles:
+    chloroplast: NC_016730.1
+    mitochondrial: HM562727.1
+  explicit_organelle_accessions_to_remove:
+  - NC_016730.1
+  - HM562727.1
+  primary_nuclear_reference: masked_main
+  sensitivity_nuclear_references:
+  - contig_filtered
+  - masked_strict
+downstream_groups:
+- high_strict
+- high_multi
+- reclassified
+- low_control
+- prjna285775_sbfI_rad_contrast
+local_inputs:
+  read_roots:
+  - /path/to/silene_fastq
+  references:
+    nuclear_fasta: /path/to/Silene_latifolia_nuclear.fasta
+    organelles:
+      chloroplast:
+        fasta: /path/to/Silene_latifolia_chloroplast.fasta
+      mitochondrial:
+        fasta: /path/to/Silene_latifolia_mitochondrial.fasta
+metadata_curation:
+  strategy_overrides: metadata/bioproject_strategy_overrides.tsv
+  protocol_table: metadata/bioproject_protocol_metadata_curated.tsv

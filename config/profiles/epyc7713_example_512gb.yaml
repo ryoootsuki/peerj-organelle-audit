@@ -1,0 +1,59 @@
+resources:
+  profile_name: "EXAMPLE_AMD_EPYC_7713_64C_128T_RAM512GB"
+  expected_physical_cores: 64
+  expected_logical_cpus: 128
+  expected_memory_gb: 512
+  profile_role: "example/planning profile; not evidence of observed execution RAM"
+
+  # Archive-scale audit: BAM-less streaming is used, so eight runs can be
+  # processed concurrently without saturating RAM or the filesystem.
+  audit_workers: 8
+  audit_threads_per_run: 10
+  audit_qname_compression_level: 1
+
+  # Network/SRA conversion are independently throttled with cross-process
+  # file semaphores. This prevents eight simultaneous fasterq-dump jobs from
+  # overwhelming the disk while allowing mapping workers to remain busy.
+  prefetch_slots: 4
+  fasterq_slots: 4
+  fasterq_threads: 6
+  prefetch_max_size: "200G"
+
+  # Truly large runs (including WGS if supplied in future datasets) are restricted so multiple multi-gigabyte qname
+  # dictionaries and nuclear indexes do not peak simultaneously.
+  heavy_run_slots: 2
+  heavy_run_spots_threshold: 20000000
+  heavy_run_strategies: ["WGS"]
+
+  # Downstream selected-run analysis writes and sorts BAMs and is therefore
+  # deliberately less concurrent than the BAM-less archive audit.
+  downstream_workers: 4
+  downstream_threads_per_run: 16
+  downstream_sort_threads: 6
+  downstream_sort_mem: "3G"
+  downstream_sort_compression_level: 1
+  bcftools_threads: 4
+
+  # Reference preparation is a one-off task and can use most physical cores.
+  reference_threads: 48
+
+  # BBTools otherwise sees 512 GB and may over-allocate Java heap in every
+  # concurrent worker. Explicitly cap each repair.sh process.
+  repair_memory_gb: 16
+
+  # Stable worker-to-CPU placement improves cache locality on Zen 3/EPYC.
+  cpu_affinity: true
+  cpu_affinity_strategy: "physical_core_blocks"
+
+  # Global paths and safeguards.
+  tmp_root: "tmp"
+  lock_root: "work/.resource_locks"
+  minimum_free_tmp_gb: 20
+  max_memory_fraction_warning: 0.80
+
+  # Compatibility aliases for scripts or user extensions written against v1.
+  workers: 8
+  threads_per_run: 10
+  sort_threads: 6
+  sort_mem: "3G"
+  download_threads: 6

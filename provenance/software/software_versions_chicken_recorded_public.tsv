@@ -1,0 +1,38 @@
+item	value
+workflow_version	2.0.0-lean-epyc7713-local
+platform	Linux-6.8.0-124-generic-x86_64-with-glibc2.39
+resource_profile_name	autotuned_runtime
+available_logical_cpus	128
+detected_memory_gb	1007.7
+audit_workers	8
+audit_threads_per_run	10
+downstream_workers	4
+downstream_threads_per_run	16
+downstream_sort_threads	6
+prefetch_slots	4
+fasterq_slots	4
+fasterq_threads	6
+heavy_run_slots	2
+reference_threads	48
+repair_memory_gb	16
+tmp_root	tmp
+cpu_affinity	True
+taskset_available	True
+read_source_policy	local_required
+reference_source_policy	local_required
+allow_read_download	False
+allow_reference_download	False
+python	Python 3.12.13
+fastp	fastp 1.3.6
+repair.sh	java -ea  --add-modules jdk.incubator.vector -Xmx842147m -Xms842147m -cp <HOME>/miniconda3/envs/peerj-organelle-audit-v2/opt/bbmap-39.80-0/bbtools.jar jgi.SplitPairsAndSingles rp --version
+seqkit	seqkit v2.13.0
+minimap2	2.31-r1302
+bedtools	bedtools v2.31.1
+bwa-mem2	Looking to launch executable "<HOME>/miniconda3/envs/peerj-organelle-audit-v2/bin/bwa-mem2.avx2", simd = .avx2
+samtools	samtools 1.22.1
+bcftools	bcftools 1.22
+common_config_sha256	400158e19c55e608fc883e59634af84b37940b69ffe640d066e1f949b6d5c0a4
+resource_profile_sha256	35c9b70f85a989d83fdd40e03331de56325e8c677e2818ec18fc051659cc3428
+runtime_config_sha256	c3450acc1fe85352d0d090e6519433217b9294df79ad06f688dcc2d84405ce29
+species_config_sha256	c98e9a993925596d56009be21af9017d5870457eb7fb840dd615cf30b0a55484
+exact_manifest_sha256	3870ce653e7855f522bac5a92c953e2d61d773726d6addc054f8b23dc9915243

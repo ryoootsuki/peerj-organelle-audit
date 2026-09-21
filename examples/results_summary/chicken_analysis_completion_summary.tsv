@@ -1,0 +1,2 @@
+species	expected_total_runs	expected_evaluable_runs	observed_primary_mapq_runs	missing_or_failed_evaluable_runs	full_audit_complete	primary_mapq
+chicken	141	141	141	0	True	20
